@@ -1,0 +1,20 @@
+const projectToBookLinkMap = new Map([
+    ['PROJECT20191126010000000272', 'https://youlutushu.jd.com/view_search-1747589-14793530-99-1-20-1.html'],
+    ['PROJECT20191126010000000163', 'https://youlutushu.jd.com/view_search-1747589-14793531-99-1-20-1.html'],
+    ['PROJECT20191126010000000175', 'https://youlutushu.jd.com/view_search-1747589-14793532-99-1-20-1.html'],
+    ['PROJECT20191126010000000182', 'https://youlutushu.jd.com/view_search-1747589-14793528-99-1-20-1.html'],
+    ['PROJECT20191126010000000027', 'https://youlutushu.jd.com/view_search-1747589-14793529-99-1-20-1.html'],
+    ['PROJECT20191126010000000186', 'https://youlutushu.jd.com/view_search-1747589-20460229-99-1-20-1.html'],
+    ['PROJECT20191126010000000087', 'https://youlutushu.jd.com/view_search-1747589-14793500-99-1-20-1.html'],
+    ['PROJECT20191126010000000181', 'https://youlutushu.jd.com/view_search-1747589-14793501-99-1-20-1.html'],
+    ['PROJECT20191126010000000133', 'https://youlutushu.jd.com/view_search-1747589-14793503-99-1-20-1.html'],
+    ['PROJECT20191126010000000362', 'https://youlutushu.jd.com/view_search-1747589-14793504-99-1-20-1.html'],
+    ['PROJECT20191126010000000103', 'https://youlutushu.jd.com/view_search-1747589-14793505-99-1-20-1.html'],
+    ['PROJECT20191126010000000383', 'https://youlutushu.jd.com/view_search-1747589-14793526-99-1-20-1.html'],
+    ['PROJECT20191126010000000213', 'https://youlutushu.jd.com/view_search-1747589-17594354-99-1-20-1.html'],
+    ['PROJECT20191126010000000169', 'https://youlutushu.jd.com/view_search-1747589-20460230-99-1-20-1.html'],
+    ['PROJECT20191126010000000038', 'https://youlutushu.jd.com/view_search-1747589-20460187-99-1-20-1.html'],
+    ['PROJECT20191126010000000232', 'https://youlutushu.jd.com/view_search-1747589-20460119-99-1-20-1.html'],
+    ['default', 'https://mall.jd.hk/view_search-1747589-0-99-1-24-1.html'],
+]);
+export default projectToBookLinkMap;

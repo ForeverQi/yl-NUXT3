@@ -1,0 +1,111 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+
+ /* div、span、p、a、i、ul、li、input、label、b太多 */
+ /* applet、object、h6、h7、blockquote、pre、abbr、acronym、address、big、cite、code、del、dfn、ins、kbd、q、s、samp、small、strike、sub、sup、tt、var、u 、center、fieldset、legend、caption、details、embed、figure、figcaption、footer、menu、output、ruby、summary、time、mark、tfoot、thead、hgroup没有用到 */
+ /* h1        5个页面在 --*/
+ /* h4        6个页面在用 --*/
+ /* h5        4个页面在用 --*/
+ /* em        5个页面在用 --*/
+ /* dl        2个页面在用 --*/
+ /* dt        2个页面在用 --*/
+ /* dd        2个页面在用 --*/
+ /* ol        1个页面在用 --*/
+ /* tbody     4个页面在用 --*/
+ /* aside     4个页面在用 --*/
+ /* canvas    4个页面在用 --*/
+ /* article   2个页面在用 --*/
+ /* header    2个页面在用 --*/
+ /* nav       3个页面在用 --*/
+ /* section   3个页面在用 --*/
+ /* audio     2个页面在用 --*/
+ /* video     3个页面在用 --*/
+ /* strong    9个页面在用 --*/
+
+ /* thead     2个页面在用 --*/
+ /* th        8个页面在用 --*/
+ /* td        7个页面在用 --*/
+
+ div,span,p,a,i,b,ul,li,input,label,iframe,h2,h3,form,tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+ }
+
+ html, body {
+     width: 100%;
+ }
+ body {
+    font-size:16px !important;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif !important;
+    /*
+    *禁用浏览器的文本溢出算法，禁止在移动端手指放大之后，文字也跟着放大
+    *详情参考 https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-size-adjust
+    */
+    -webkit-text-size-adjust: none;
+     /* 解决移动端按钮、a链接,点击会闪动、有背景色的现象 */
+    -webkit-tap-highlight-color: rgba(8, 8, 8, 0);
+}
+
+ /* 太多 */
+ a {
+    /* color: #999; */
+    /* 指定当元素背面朝向观察者时是否可见，适用于3D空间 */
+    /* backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; */
+ }
+/* 太多 */
+ img {
+     border: 0;
+ }
+/* 太多 */
+ button {
+     border: none;
+ }
+/* 太多 */
+ input[type="button"] {
+     /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+     /* 用于控制 UI 控件的基于操作系统主题的原生外观：https://developer.mozilla.org/zh-CN/docs/Web/CSS/appearance */
+     /* appearance: none;
+     -webkit-appearance: none; */
+ }
+/* 太多 */
+ input, textarea {
+  /* user-select 默认值为auto，如果浏览器允许，则可以选择文本。详情参考:
+     https://developer.mozilla.org/zh-CN/docs/Web/CSS/user-select
+  */
+
+  /* -webkit-user-select: auto!important;
+ -khtml-user-select: auto!important;
+ -moz-user-select: auto!important;
+ -ms-user-select: auto!important;
+ -o-user-select: auto!important;
+ user-select: auto!important; */
+ }
+
+/* 修改滚动条的样式 */
+ ::-webkit-scrollbar {
+     width: 5px;
+     height: 5px;
+ }
+
+ ::-webkit-scrollbar-track-piece {
+     background-color: rgba(0, 0, 0, 0.2);
+     -webkit-border-radius: 6px;
+ }
+
+ ::-webkit-scrollbar-thumb:vertical {
+     height: 5px;
+     background-color: rgba(125, 125, 125, 0.7);
+     -webkit-border-radius: 6px;
+ }
+
+ ::-webkit-scrollbar-thumb:horizontal {
+     width: 5px;
+     background-color: rgba(125, 125, 125, 0.7);
+     -webkit-border-radius: 6px;
+ }
+
