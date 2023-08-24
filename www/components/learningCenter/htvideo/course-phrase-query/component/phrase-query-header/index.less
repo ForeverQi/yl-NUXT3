@@ -1,0 +1,108 @@
+.phrase-query-header {
+    padding: 24px 18px 0px 18px;
+    .shake {
+        animation: shake 800ms ease-in-out;
+    }
+    @keyframes shake {
+        10%,
+        90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+        20%,
+        80% {
+            transform: translate3d(+2px, 0, 0);
+        }
+        30%,
+        70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+        40%,
+        60% {
+            transform: translate3d(+4px, 0, 0);
+        }
+        50% {
+            transform: translate3d(-4px, 0, 0);
+        }
+    }
+    .popper-dict-autocomplete {
+        z-index: 9999;
+    }
+    .no-data {
+        margin-left: -30px;
+        position: relative;
+        border-radius: 7px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dict-tips {
+        padding: 12px 0 12px 8px;
+        font-size: 14px;
+        color: #8d90aa;
+        box-sizing: border-box;
+        word-break: break-all;
+        line-height: 1.5em;
+        .search-btn {
+            color: #f8323c;
+            cursor: pointer;
+        }
+    }
+    /deep/.el-icon-arrow-left {
+        width: 8px;
+        height: 13px;
+        color: #fff;
+        margin-right: 8px;
+    }
+    /deep/.el-autocomplete {
+        width: calc(100% - 75px);
+        .el-input__inner {
+            border-radius: 25px;
+        }
+        &.dynamic {
+            width: calc(100% - 96px);
+        }
+    }
+    /deep/.el-autocomplete-suggestion {
+        border: 1px solid #3d4854;
+        li:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+    }
+    /deep/.el-autocomplete-suggestion__wrap,
+    /deep/.el-autocomplete-suggestion__list {
+        background-color: #3d4854;
+        li {
+            color: #fff;
+        }
+    }
+    /deep/.el-autocomplete-suggestion__wrap {
+        padding: 5px 0px;
+    }
+    /deep/.popper__arrow {
+        border-bottom-color: #3d4854;
+        &::after {
+            border-bottom-color: #3d4854;
+        }
+    }
+    // /deep/.popper__arrow::after{
+    //     border-bottom-color: #3d4854;
+    // }
+    /deep/.el-input {
+        input {
+            background-color: #3d4854;
+            border: 1px solid #3d4854;
+            color: #fff;
+        }
+    }
+    /deep/.el-button {
+        background: linear-gradient(90deg, #ff6870, #f8323c);
+    }
+    .flex-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

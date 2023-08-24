@@ -1,0 +1,172 @@
+.information-page{
+    background: #f6f7f9;
+}
+.w-1200{
+    width: 1200px;
+    margin: 0 auto;
+}
+.information-header{
+    padding: 24px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .search-summary {
+        font-size: 16px;
+        color: #3a3d4b;
+        .keywords {
+            color: #FF2E30;
+            font-style: normal;
+        }
+    }
+
+    .search-container {
+        background-color: #F6F7F9;
+        border: 1px solid rgba(141,144,170,0.10);
+        border-radius: 21px;
+        width: 300px;
+        padding-left: 24px;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        height: 40px;
+        box-sizing: border-box;
+        &.active {
+            background: #ffffff;
+            border: 1px solid rgba(255,46,48,0.40);
+        }
+        .txt {
+            background-color: transparent;
+            height: 40px;
+            outline: none;
+            flex: 1;
+            font-size: 16px;
+            color: #3A3D4B;
+            border: none;
+        }    
+        .txt::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #BCC2CD;
+            font-size: 14px;
+        }
+    
+        .txt::-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #BCC2CD;
+            font-size: 14px;
+        }
+    
+        .txt::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #BCC2CD;
+            font-size: 14px;
+        }
+    
+        .txt::-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: #BCC2CD;
+            font-size: 14px;
+        }
+        .search {
+            outline: none;
+            border: none;
+            height: 40px;
+            width: 56px;
+            background: url('../asset/images/search-normal.png') center/16px 16px no-repeat, transparent;
+            &.active {
+                background: url('../asset/images/search-focus.png') center/16px 16px no-repeat,linear-gradient(84deg,#ff8389 5%, #ff5760 93%);
+            }
+        }
+    }
+}
+.information-type {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-top: 16px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+
+    .information-type-item{
+        position: relative;
+        padding-left: 24px;
+        padding-right: 24px;
+        font-size: 14px;
+        color: #53586C;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover,&.active{
+            color: #FF2E30;
+        }
+    }
+    .information-type-item:nth-child(n + 2)::before{
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        top: 50%;
+        width: 1px;
+        height: 10px;
+        background: #d5d9d9;
+        transform: translateY(-50%);
+    }
+}
+// 内容
+.information-content{
+    background: #f6f7f9;
+    padding: 24px 0 67px;
+    display: flex;
+    align-items: flex-start;
+    // 列表
+    .information-list{
+        position: relative;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        background-color: #fff;
+        width: 852px;
+        border-radius: 8px;
+        margin-right: 24px;
+        padding: 16px 0;
+        min-height: 580px;
+    }
+    .paging{
+        padding: 20px;
+        text-align: center;
+    }
+    .card-file-box:last-child{
+        border-bottom: none;
+    }
+    .content-empty{
+        height: 548px;
+    }
+}
+// 右侧推荐
+.information-side{
+    &>div{
+        margin-bottom: 16px;
+    }
+    &>div:last-child{
+        margin-bottom: 0
+    }
+    .recommended-app{
+        width: 324px;
+        height: 180px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+}
+.information-search {
+    .subject-wrapper {
+        padding-top: 10px;
+    }
+    /deep/ .cd-wrapper-expand {
+        left: -40px;
+        padding-left: 40px;
+    }
+}
+.information-wrapper {
+    margin-top: 12px;
+    background-color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}

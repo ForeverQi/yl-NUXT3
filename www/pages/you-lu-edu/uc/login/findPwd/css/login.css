@@ -1,0 +1,502 @@
+.w1100 {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clear {
+    clear: both;
+}
+
+/*头部*/
+.nl_header {
+    height: 490px;
+    width: 100%;
+    min-width: 1200px;
+    background: url("../asset/images/nl_bg.jpg") no-repeat center center;
+}
+
+.nlh_box {
+    padding-top: 70px;
+    width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+    position: relative;
+}
+
+.nlh_title {
+    height: 100px;
+    background: url("../asset/images/nl_title.png") no-repeat left center;
+}
+
+.nlh_tel {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    height: 70px;
+    width: 250px;
+    background: url("../asset/images/nl_tel.png") no-repeat right bottom;
+}
+
+
+/*登录注册内容区*/
+.nl_mianCon {
+    width: 1200px;
+    padding: 20px 0;
+    background: #fff;
+    -moz-box-shadow: 0 10px 10px #f2ebea;
+    -webkit-box-shadow: 0 10px 10px #f2ebea;
+    box-shadow: 0 10px 10px #f2ebea;
+    border-radius: 20px;
+    margin: -300px auto 90px;
+    position: relative;
+}
+
+.nl_mianCon:after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.nl_logo {
+    width: 518px;
+    border-right: 2px solid #e7e7e7;
+    background: url("../asset/images/nl_logo.png") no-repeat center center;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    bottom: 70px;
+}
+
+.nl_lnform {
+    width: 390px;
+    padding: 10px 95px 30px;
+    float: right;
+}
+
+.nlf_tit {
+    line-height: 50px;
+    height: 50px;
+}
+
+.nlf_tit ul li {
+    line-height: 50px;
+    width: 50%;
+    float: left;
+    border-bottom: 1px solid #e7e7e7;
+    color: #999;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nlf_tit ul li.active {
+    border-bottom: 1px solid #ed5736;
+    color: #ed5736;
+}
+
+.nlf_tit ul li.all {
+    width: 100%;
+    cursor: default;
+    border-bottom: 1px solid #e7e7e7;
+    color: #999;
+}
+
+.nlf_con {
+    padding-top: 10px;
+}
+
+.nlf_item {
+    /*display: none;*/
+}
+
+.nlf_item.block {
+    display: block;
+}
+
+.nlf_lab {
+    height: 48px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.nlf_inp {
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    padding: 0 10px 0 35px;
+    width: 343px;
+    outline: none;
+}
+
+.nlf_inp.nlf_pwd {
+    padding: 0 35px;
+    width: 318px;
+}
+
+.nlf_yzminp {
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    padding: 0 10px 0 35px;
+    width: 193px;
+    outline: none;
+}
+
+.yzm_btn {
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    background: #fff;
+    position: absolute;
+    left: 250px;
+    top: 0;
+    width: 140px;
+    color: #ed5736;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.yzm_btn.gray {
+    background: #efefef;
+    border: 1px solid #e7e7e7;
+    color: #ed5736;
+}
+
+.yzm_img {
+    position: absolute;
+    left: 250px;
+    top: 0;
+    width: 138px;
+    height: 46px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nlf_lab i {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url("../asset/images/nl_icon2.png") no-repeat;
+    position: absolute;
+    top: 14px;
+    left: 7px;
+}
+
+.nlf_lab i.user {
+    background-position: -40px 0;
+}
+
+.nlf_lab i.password {
+    background-position: -20px -20px;
+}
+
+.nlf_lab i.tel {
+    background-position: -20px 0;
+    margin-top: 0px;
+}
+
+.nlf_lab i.picYzm {
+    background-position: -60px 0;
+}
+
+.nlf_lab i.messYzm {
+    background-position: 0 -20px;
+}
+
+.nlf_lab i.eye {
+    background-position: -40px -20px;
+    right: 7px;
+    left: auto;
+    cursor: pointer;
+    display: none \9;
+}
+
+.nlf_lab i.eye.open {
+    background-position: -60px -20px;
+    right: 7px;
+    left: auto;
+    cursor: pointer;
+    display: none \9;
+}
+
+.nlf_tip {
+    position: relative;
+    margin: 5px 0;
+}
+
+.nlf_sp {
+    color: #333;
+    font-size: 14px;
+}
+
+.nlf_p {
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.nlf_rt {
+    color: #333;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.link {
+    color: #ed5736;
+}
+
+.nlf_btnbox {
+    padding: 30px 0 20px;
+}
+
+.nlf_btn {
+    width: 390px;
+    height: 48px;
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: center;
+    line-height: 46px;
+    background: #d52e26;
+    background: -webkit-linear-gradient(left, #d52e26, #ed5736);
+    background: -o-linear-gradient(right, #d52e26, #ed5736);
+    background: -moz-linear-gradient(right, #d52e26, #ed5736);
+    background: linear-gradient(to right, #d52e26, #ed5736);
+    -moz-box-shadow: 0 10px 10px #f8b3a4;
+    -webkit-box-shadow: 0 10px 10px #f8b3a4;
+    box-shadow: 0 10px 10px #f8b3a4;
+}
+
+.nlf_other {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.nlf_other span {
+    color: #333;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 32px;
+    position: relative;
+    padding-right: 35px;
+}
+
+.nlf_other i.wx {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url("../asset/images/nl_wx.png") no-repeat center center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.nl_fpdform {
+    width: 390px;
+    margin: 0 auto;
+    clear: both;
+    padding: 0 0 20px;
+}
+
+.nlm_tit {
+    padding: 0 30px;
+    text-align: right;
+    line-height: 35px;
+}
+
+.nlm_a {
+    color: #ed5736;
+    font-size: 18px;
+}
+
+.nlm_a span {
+    color: #333;
+}
+
+.nlm_sp {
+    color: #e7e7e7;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.nlm_psdtt {
+    padding: 10px 0;
+    height: 70px;
+    *padding: 10px 0 30px;
+}
+
+.nlm_psdtt:after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.nlp_lifo {
+    width: 42px;
+    position: relative;
+    float: left;
+}
+
+.nlp_num {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background: url("../asset/images/nl_icon.png") no-repeat;
+    background-position: -42px 0;
+    text-align: center;
+    line-height: 42px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.nlp_p {
+    color: #999;
+    font-size: 18px;
+    width: 120px;
+    margin: 5px 0 0 -39px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nlp_lifg {
+    width: 116px;
+    float: left;
+    margin: 5px 8px;
+    *margin: 20px 8px;
+}
+
+.nlp_fg {
+    width: 116px;
+    height: 3px;
+    display: inline-block;
+    background: url("../asset/images/nl_icon1.png") no-repeat;
+}
+
+.nlp_lifo.active .nlp_num {
+    background-position: 0 0;
+}
+
+.nlp_lifo.active .nlp_p {
+    color: #ed5736;
+}
+
+.nlp_lifg.active .nlp_fg {
+    background-position: 0 -3px;
+}
+
+.nl_fpdform .nlf_lab {
+    margin-top: 30px;
+}
+
+.nl_fpdform .nlf_btnbox {
+    padding: 40px 0 20px;
+}
+
+.nlf_errtip {
+    font-size: 12px;
+    color: #ed5736;
+    line-height: 20px;
+    margin-bottom: -10px;
+}
+
+.nlf_errtip span {
+    color: #333;
+}
+
+.psd_sp {
+    color: #333;
+    font-size: 20px;
+    display: inline-block;
+    line-height: 48px;
+    width: 105px;
+    float: left;
+}
+
+.nlf_psdinp {
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    padding: 0 10px;
+    width: 263px;
+    outline: none;
+}
+
+.psd_errtip {
+    font-size: 12px;
+    color: #ed5736;
+    line-height: 41px;
+    text-align: center;
+}
+
+.psd_errtip img {
+    margin-top: 15px;
+}
+
+.nlf_succes {
+    margin-top: 20px;
+    padding: 60px 100px 60px 0;
+    background: url("../asset/images/nl_fg.png") no-repeat right center;
+}
+
+.nfs_p {
+    color: #333;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.nfs_p a{
+    color: #333;
+}
+
+.nfs_time {
+    color: #ed5736;
+}
+
+.nfs_tip {
+    color: #ed5736;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+/*图形验证码*/
+.img-captcha{
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    background: #fff;
+    position: absolute;
+    left: 250px;
+    top: 0;
+    width: 140px;
+    /*width: 92px;*/
+    color: #ed5736;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+/*极验证*/
+.geetest_holder.geetest_wind {
+    width: 100% !important;
+}
+
+.cbox {
+    -webkit-appearance: checkbox;
+}

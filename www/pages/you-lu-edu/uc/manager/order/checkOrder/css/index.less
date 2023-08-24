@@ -1,0 +1,567 @@
+.nod_con {
+    background: #fff;
+    margin: 40px auto;
+    width: 1200px;
+    box-shadow: 0px 1px 8px 4px rgba(0, 0, 0, 0.06);
+}
+.nod_p {
+    color: #333;
+    font-size: 18px;
+    line-height: 50px;
+    padding-bottom: 20px;
+}
+.nod_order {
+    display: flex;
+    padding: 20px 30px;
+}
+.coupon-title {
+    border-bottom: 1px solid #eeeeee;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 34px;
+    font-size: 18px;
+    color: #333;
+    &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background: url('../asset/images/coupon.png') center/100% no-repeat;
+        margin-right: 12px;
+    }
+}
+.nod_lf {
+    flex: 1;
+}
+.nyhq_tt {
+    font-size: 16px;
+    color: #666;
+    line-height: 50px;
+    height: 50px;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.nyhq_ysy {
+    font-size: 16px;
+    color: #666;
+    line-height: 50px;
+    height: 50px;
+}
+.nyhq_tt i {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: url('../asset/images/nod_icon2.png') no-repeat;
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+.nyhq_tt.zk i {
+    background: url('../asset/images/nod_icon.png') no-repeat;
+    background-position: -20px 0;
+}
+.nyhq_con {
+    background: #f5f5f5;
+    padding: 30px 25px;
+    display: none;
+}
+.nyhq_box {
+    margin-bottom: 20px;
+}
+.nyhq_inp {
+    width: 300px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    outline: none;
+    padding: 0 10px;
+}
+.nyhq_btn {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: linear-gradient(90deg,#ff6870, #f8323c);
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.nyhq_tip span {
+    color: #999999;
+    font-size: 14px;
+    line-height: 22px;
+    float: left;
+}
+.nyhq_p {
+    padding-left: 36px;
+}
+.nyhq_p p {
+    color: #999999;
+    font-size: 14px;
+    line-height: 22px;
+}
+.nod_rt {
+    width: 405px;
+}
+
+.nod_pribox {
+    width: 270px;
+    float: right;
+    p {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.nod_sp1 {
+    display: inline-block;
+    width: 164px;
+    line-height: 35px;
+    color: #666666;
+    font-size: 16px;
+
+    
+}
+.nod_sp2 {
+    display: inline-block;
+    width: 164px;
+    line-height: 70px;
+    color: #F8323C;
+    font-size: 24px;
+    font-weight: bold;
+}
+.nod_pri1 {
+    display: inline-block;
+    line-height: 35px;
+    color: #F8323C;
+    font-size: 16px;
+
+    &.black {
+      color: #3a3d4b;
+    }
+}
+.nod_pri2 {
+    display: inline-block;
+    line-height: 70px;
+    color: #F8323C;
+    font-size: 24px;
+    font-weight: bold;
+}
+.nod_table {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+}
+.nod_table table {
+    width: 365px;
+    text-align: right;
+}
+.nod_table table i {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url('../asset/images/nod_icon.png') no-repeat;
+    position: absolute;
+    top: 5px;
+    left: -18px;
+}
+.nod_table table .label {
+    font-size: 16px;
+    color: #333;
+    line-height: 30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+    *padding-left: 3px;
+    cursor: pointer;
+}
+.nod_table table .label.check i {
+    background-position: 0 -20px;
+}
+.nod_table table td a {
+    display: inline-block;
+    line-height: 22px;
+    margin: 5px 0;
+    font-size: 16px;
+    color: #666;
+}
+.nod_btnbox {
+    text-align: right;
+    padding-top: 30px;
+}
+.nod_submit {
+    width: 210px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #cccccc;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.nod_submit.red {
+    background: linear-gradient(90deg,#ff6870, #f8323c);
+}
+
+.nxy_zz {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nxy_box {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    background: #fff;
+    z-index: 1000;
+    width: 700px;
+    border-radius: 5px;
+    margin: 0 0 0 -350px;
+    bottom: 50px;
+    overflow: hidden;
+}
+.nxy_tit {
+    line-height: 70px;
+    padding: 0 15px;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    text-align: center;
+    height: 70px;
+}
+.nxy_tit span {
+    color: #333333;
+    font-size: 24px;
+}
+.nxy_close {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../asset/images/close.png') no-repeat center center;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 27px;
+}
+.nxy_con {
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    overflow-y: auto;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+}
+.nxy_con p {
+    color: #333;
+    padding: 5px 0;
+}
+.nxy_con p.nxy_tt {
+    color: #333;
+}
+.nxy_con b * {
+    color: #333;
+    font-weight: bold !important;
+}
+.nxy_con b {
+    color: #333;
+    font-weight: bold !important;
+}
+
+.ncla_tt {
+    line-height: 70px;
+    height: 70px;
+    position: relative;
+    border-bottom: 2px solid #f5f5f5;
+}
+.ncla_tt p {
+    color: #666;
+    font-size: 16px;
+}
+.ncla_rt {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ncla_pri {
+    color: #F8323C;
+    font-size: 22px;
+}
+.ncla_gmbtn {
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    background: #F8323C;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.nclbs_p {
+    line-height: 70px;
+    color: #222222;
+    font-size: 18px;
+}
+.ncla_box {
+    border: 1px solid #dddddd;
+    border-left: 2px solid #dddddd;
+    border-right: 2px solid #dddddd;
+}
+.ncla_item {
+    width: 50%;
+    float: left;
+    line-height: 60px;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+.ncla_sp {
+    background: #f2f2f2;
+    display: inline-block;
+    line-height: 60px;
+    color: #333;
+    font-size: 16px;
+    width: 30%;
+    text-align: center;
+}
+.ncla_p {
+    color: #333;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.py_tipBox {
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 1000;
+}
+.pytp_cloBox {
+    text-align: right;
+    line-height: 30px;
+    padding: 10px;
+}
+.pytp_cloBox .pytp_close {
+    color: #bdbdbd;
+    font-size: 40px;
+    cursor: pointer;
+}
+.pytp_con {
+    padding: 10px 0 30px;
+    text-align: center;
+}
+.pytp_tit {
+    font-size: 30px;
+    font-weight: bold;
+    color: #bdbdbd;
+    padding-bottom: 25px;
+}
+.pytp_cc {
+    font-size: 16px;
+    color: #444444;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+.pytp_bb {
+    padding-top: 30px;
+}
+.pytp_bb .pytp_confirm {
+    width: 160px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #F8323C;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 25px;
+}
+.pytp_bb .pytp_cancel {
+    width: 160px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #bdbdbd;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 25px;
+}
+.py_zz {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    z-index: 999;
+}
+
+.cancelOrderPopup,
+.hideTip,
+.protocolPopup {
+    display: none;
+}
+.show,
+.showCancelOrderPopup,
+.showProtocolPopup,
+.showTip {
+    display: block !important;
+}
+
+.treaty {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ncla_tt {
+        line-height: 70px;
+        height: 70px;
+        position: relative;
+        border-bottom: 2px solid #f5f5f5;
+        p {
+            color: #666;
+            font-size: 16px;
+            padding-left: 30px;
+        }
+        .ncla_rt {
+            position: absolute;
+            right: 30px;
+            top: 0;
+            .ncla_pri {
+                color: #F8323C;
+                font-size: 22px;
+            }
+            .ncla_gmbtn {
+                width: 110px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                display: inline-block;
+                background: #F8323C;
+                color: #fff;
+                font-size: 16px;
+                border-radius: 4px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+.contentWrap {
+    padding: 30px;
+}
+.errorTip {
+    display: none;
+    .mk_tipbox[data-v-3c71cdd2] {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 3001;
+        text-align: center;
+        margin: -150px -250px;
+        width: 382px;
+        height: 245px;
+        background: #ffffff;
+        box-shadow: 3px 7px 27px 0px rgba(128, 128, 128, 0.33);
+        border-radius: 4px;
+    }
+}
+
+
+.coupon-wrapper {
+
+    .title {
+        font-size: 14px;
+        font-weight: 400;
+        color: #3a3d4b;
+        padding-bottom: 24px;
+
+        label {
+            color: #F8323C;
+        }
+    }
+    .wrapper {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-right: 15px;
+
+        .com-wrap {
+          width: 100%;
+          flex-shrink: 0;
+          // margin-bottom: 24px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
+        /deep/ .coupon-item {
+            width: 344px;
+            height: 110px;
+            margin-bottom: 24px;
+
+            .amount {
+                width: 98px;
+                height: 110px;
+
+                .full-discount span,.discount label{
+                    font-size: 20px;
+                }
+            }
+
+            .coupon-detail {
+                .coupon-detail-content {
+                    padding: 10px 12px 0 12px;
+                }
+                .explain {
+                    padding-left: 12px;
+                    bottom: 4px;
+                }
+            }
+
+            .explain-container {
+                top: 123px;
+
+                .popper_arrow {
+                    left: 125px;
+                }
+            }
+        }
+    }
+}
+

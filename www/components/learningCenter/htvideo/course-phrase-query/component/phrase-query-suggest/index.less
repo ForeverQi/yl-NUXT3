@@ -1,0 +1,206 @@
+.phrase-query-suggest {
+    .functional {
+        width: 100%;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .control {
+            position: relative;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 21px;
+            &.praise {
+                margin-right: 50px;
+                .icon {
+                    background-image: url('./image/like.png');
+                    &.active {
+                        background-image: url('./image/like_1.png');
+                    }
+                }
+            }
+            .icon {
+                width: 18px;
+                height: 18px;
+                background-size: contain;
+                margin-right: 6px;
+            }
+            &.suggest {
+                .icon {
+                    background-image: url('./image/feed-back.png');
+                    &.active {
+                        background-image: url('./image/feed-back_1.png');
+                    }
+                }
+            }
+            p {
+                height: 21px;
+                font-size: 16px;
+                font-family: MicrosoftYaHei, MicrosoftYaHei-Regular;
+                font-weight: 400;
+                color: #ffffff;
+                line-height: 21px;
+                &.active {
+                    color: #ff2e30;
+                }
+            }
+        }
+        .put-up {
+            width: 70px;
+            height: 32px;
+            background: linear-gradient(90deg, #ff6870, #f8323c);
+            border-radius: 17px 0px 0px 17px;
+            position: absolute;
+            top: 16px;
+            right: -18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                height: 19px;
+                font-size: 14px;
+                font-family: MicrosoftYaHei, MicrosoftYaHei-Regular;
+                font-weight: 400;
+                color: #ffffff;
+                line-height: 19px;
+                margin-right: 6px;
+            }
+            img {
+                width: 16px;
+            }
+        }
+    }
+    .animate__animated {
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    .animate__slideInUp {
+        color: #f8323c;
+        position: absolute;
+        right: 15px;
+        top: -19px;
+        -webkit-animation-name: slideInUp;
+        animation-name: slideInUp;
+    }
+    @-webkit-keyframes slideInUp {
+        0% {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+            visibility: visible;
+        }
+
+        to {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            visibility: hidden;
+        }
+    }
+
+    @keyframes slideInUp {
+        0% {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+            visibility: visible;
+        }
+
+        to {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            visibility: hidden;
+        }
+    }
+    .main {
+        width: 100%;
+        border-top: 1px solid #343a41;
+        position: relative;
+        .suggest-area {
+            .suggest-list {
+                margin: 36px 0px 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                .button {
+                    box-sizing: border-box;
+                    height: 30px;
+                    padding: 5px 9px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid #979797;
+                    border-radius: 16px;
+                    font-size: 14px;
+                    font-family: MicrosoftYaHei, MicrosoftYaHei-Regular;
+                    font-weight: 400;
+                    color: #ffffff;
+                    cursor: pointer;
+                    margin-right: 5px;
+                    &.active {
+                        padding: 5px 10px;
+                        color: #fff;
+                        background: linear-gradient(301deg, #f8323c 0%, #ff737a 100%);
+                        border-radius: 15px;
+                        border: none;
+                    }
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+                }
+            }
+            .submit {
+                padding: 13px 0px;
+                button {
+                    width: 100%;
+                    height: 40px;
+                    background: linear-gradient(90deg, #ff6870, #f8323c);
+                    border-radius: 20px;
+                    font-size: 14px;
+                    font-family: MicrosoftYaHei, MicrosoftYaHei-Bold;
+                    line-height: 40px;
+                    text-align: center;
+                    color: #ffffff;
+                }
+            }
+            /deep/textarea {
+                background-color: #3d4854;
+                border: none;
+                color: #ddd;
+            }
+            /deep/.el-input__count {
+                background-color: #3d4854;
+            }
+        }
+        .tip {
+            position: absolute;
+            width: 100%;
+            top: 10px;
+            height: 17px;
+            font-size: 12px;
+            font-family: PingFangSC, PingFangSC-Regular;
+            font-weight: 400;
+            text-align: center;
+            color: #ff2e30;
+            line-height: 17px;
+        }
+        .success {
+            padding: 10px 0px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+                width: 235px;
+                font-size: 14px;
+                font-family: MicrosoftYaHei, MicrosoftYaHei-Regular;
+                font-weight: 400;
+                text-align: center;
+                color: #ffffff;
+                line-height: 22px;
+            }
+        }
+    }
+}

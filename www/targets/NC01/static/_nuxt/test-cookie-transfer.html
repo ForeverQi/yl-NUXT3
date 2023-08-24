@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
+	<style>
+        html{
+            background-color: #EFEFEF;
+            height: 100%;
+        }
+
+        body{
+            width: 1000px;
+            min-height: 100%;
+            padding: 20px;
+            margin: 0 auto;
+            background-color: white;
+            box-sizing: border-box;
+        }
+
+        .state{
+            padding: 30px 0;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: solid 1px #EEEEEE;
+        }
+
+        .links, .manipulate-cookie{
+            margin-top: 20px;
+        }
+
+        .title{
+            color: #999999;
+        }
+
+        .content{
+            font-family: "Consolas";
+        }
+
+        .content > div{
+            padding: 10px;
+        }
+
+        .note{
+            color: #999999;
+        }
+
+        .links .content > div{
+            display: block;
+            margin-top: 10px;
+            border: solid 1px #EEEEEE;
+            border-radius: 3px;
+        }
+
+        .referer-domain{
+            display: block;
+        }
+
+        .referer-domain::before{
+            content: "Referer 域名：";
+        }
+
+        .code{
+            display: inline-block;
+            font-family: "Consolas";
+            font-weight: lighter;
+            padding: 3px 5px;
+            background-color: #EEEEEE;
+            border-radius: 3px;
+        }
+
+        .referer{
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .referer::before{
+            content: "Referer："
+        }
+	</style>
+</head>
+<body>
+<div class = "state">
+	<span class = "referer-domain"></span>
+	<input class = "change-domain" type = "button" value = "更换" />
+	<span class = "referer code"></span>
+</div>
+
+<div class = "links">
+	<div class = "title">
+		测试链接
+		<a target = "_blank" href = "https://youlu.yuque.com/h5/qvnu43/ttuexk#56wB">测试规则</a>
+	</div>
+	<div class = "content"></div>
+</div>
+
+<div class = "manipulate-cookie">
+	<div class = "title">Cookie</div>
+	<div class = "content">
+		<div data-cookie-name = "EmployeeDptFullName" data-cookie-value = "A-jdcyb/qdyfb">
+			<input class = "set" type = "button" value = "添加" />
+			<input class = "remove" type = "button" value = "删除" />
+
+			<span class = "code"></span>
+			<span class = "note">用于标识自己为“灰度用户”</span>
+		</div>
+	</div>
+</div>
+
+<script type = "text/javascript">
+    (function(){
+        /**
+         * 设置 cookie
+         * @param {String} sKey cookie的key
+         * @param {String} sValue cookie的value
+         * @param {Number|String|Date} [vEnd] cookie有效期。Number - 有效时长，单位：秒；String - 结束时间；Date - 结束时间
+         * @param {String} [sPath] cookie的路径
+         * @param {String} [sDomain] cookie的域名
+         * @param {Boolean} bSecure cookie是否只能在https下传输
+         * @returns {boolean} 设置是否成功
+         */
+        var setCookie = function(sKey, sValue, vEnd, sPath, sDomain, bSecure){
+            if(!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)){
+                return false;
+            }
+
+            var sExpires = '';
+            if(vEnd){
+                switch(vEnd.constructor){
+                    case Number:
+                        sExpires = vEnd === Infinity? '; expires=Fri, 31 Dec 9999 23:59:59 GMT': '; max-age=' + vEnd;
+                        break;
+                    case String:
+                        sExpires = '; expires=' + vEnd;
+                        break;
+                    case Date:
+                        sExpires = '; expires=' + vEnd.toUTCString();
+                        break;
+                }
+            }
+            document.cookie = encodeURIComponent(sKey) + '=' + sValue + sExpires + (sDomain? '; domain=' + sDomain: '') + (sPath? '; path=' + sPath: '') + (bSecure? '; secure': '');
+            return true;
+        };
+
+        /**
+         * 删除cookie
+         *
+         * @param {String} sKey cookie的key
+         * @param {String} [sPath] cookie的路径
+         * @param {String} [sDomain] cookie的域名
+         * @returns {boolean} 删除是否成功
+         */
+        var removeCookie = function(sKey, sPath, sDomain){
+            if(!sKey || !hasCookie(sKey)){
+                return false;
+            }
+
+            document.cookie = encodeURIComponent(sKey) + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT' + (sDomain? '; domain=' + sDomain: '') + (sPath? '; path=' + sPath: '');
+            return true;
+        };
+
+        /**
+         * 判断cookie是否存在
+         * @param {String} sKey cookie的key
+         * @returns {boolean}
+         */
+        var hasCookie = function(sKey){
+            return (new RegExp('(?:^|;\\s*)' + encodeURIComponent(sKey).replace(/[-.+*]/g, '\\$&') + '\\s*\\=')).test(document.cookie);
+        };
+
+        /****************************************************************/
+
+        document.querySelector('.referer-domain').innerHTML = location.host;
+        document.querySelector('.referer').innerHTML = location.href;
+
+        document.querySelector('.change-domain').addEventListener('click', function(){
+            location.replace(location.protocol + '//' + location.host.replace(/(niceloo|youlu)/, function($0, $1){
+                    if('niceloo' === $1)
+                        return 'youlu';
+                    else
+                        return 'niceloo';
+                }) + location.pathname
+                + location.search.replace(/([?&=])_ngurd_=[^&=]*/, '$1').replace(/\?(.*)/, function($0, $1){
+                    return '?_ngurd_=1' + ($1.length === 0? '': ('&' + $1));
+                }).replace(/^([^?]*)$/, '$1?_ngurd_=1')
+                + location.hash);
+        });
+
+        var linksContentObj = document.querySelector('.links .content');
+        var domains = ['niceloo.com', 'youlu.com'];
+        domains.forEach(function(domain){
+            var divObj = document.createElement('div');
+
+            var linkObj = document.createElement('a');
+            linkObj.target = '_self';
+            linkObj.href = location.protocol + '//' + location.host.replace(/(?:niceloo|youlu)\.com/i, domain) + '/class?a=1&b=2&name=' + encodeURIComponent('中文字符') + '#/hash?c=3&d=4';
+            linkObj.innerHTML = linkObj.href;
+
+            divObj.appendChild(linkObj);
+            linksContentObj.appendChild(divObj);
+        });
+
+        var cookieItemObjs = document.querySelectorAll('.manipulate-cookie [data-cookie-name]');
+        var cookieDomain = location.hostname;
+        if(!(/^(?:localhost|\d+(?:\.\d+){3})$/.test(cookieDomain)))
+            cookieDomain = '.' + cookieDomain.match(/\b[\w-]+\.(?:cn|com|com\.cn|org|net)$/);
+        for(var i = 0; i < cookieItemObjs.length; i++){
+            var codeObj = cookieItemObjs[i].querySelector('.code'),
+                setObj = cookieItemObjs[i].querySelector('.set'),
+                removeObj = cookieItemObjs[i].querySelector('.remove');
+
+            var cookieName = cookieItemObjs[i].dataset.cookieName,
+                cookieValue = cookieItemObjs[i].dataset.cookieValue;
+
+            codeObj.innerHTML = cookieName + '=' + cookieValue;
+
+            setObj.onclick = (function(name, value){
+                return function(){
+                    setCookie(name, value, Infinity, '/', cookieDomain);
+                };
+            })(cookieName, cookieValue);
+
+            removeObj.onclick = (function(name){
+                return function(){
+                    removeCookie(name, '/', cookieDomain);
+                };
+            })(cookieName);
+        }
+    })();
+</script>
+
+</body>
+</html>

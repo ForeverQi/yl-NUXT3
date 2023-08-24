@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>弹窗-关闭icon</title>
+    <g id="修改2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="视频播放切图" transform="translate(-145.000000, -56.000000)">
+            <g id="弹窗-关闭icon" transform="translate(145.000000, 56.000000)">
+                <rect id="矩形" x="0" y="0" width="16" height="16"></rect>
+                <rect id="矩形" fill="#999999" transform="translate(8.363961, 8.363961) rotate(-315.000000) translate(-8.363961, -8.363961) " x="0.363961031" y="7.36396103" width="16" height="2" rx="1"></rect>
+                <rect id="矩形" fill="#999999" transform="translate(8.363961, 8.363961) rotate(-585.000000) translate(-8.363961, -8.363961) " x="0.363961031" y="7.36396103" width="16" height="2" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

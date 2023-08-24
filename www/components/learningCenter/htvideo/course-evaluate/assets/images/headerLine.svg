@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="166px" height="1px" viewBox="0 0 166 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形</title>
+    <defs>
+        <linearGradient x1="95.4192048%" y1="0%" x2="2.98671056%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#FFDF96" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFD1A4" offset="48.9681217%"></stop>
+            <stop stop-color="#FFDA89" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-2670.000000, -745.000000)" fill="url(#linearGradient-1)">
+            <rect id="矩形" x="2664.57143" y="745" width="180" height="1"></rect>
+        </g>
+    </g>
+</svg>

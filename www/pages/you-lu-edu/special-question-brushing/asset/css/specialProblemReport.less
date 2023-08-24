@@ -1,0 +1,235 @@
+.special-problem-report {
+    padding:46px 0 200px;
+    min-height: 300px;
+    .problem-report-content {
+        width: 1200px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+    }
+    .problem-report-header {
+        width: 100%;
+        height: 200px;
+        background: url('../images/reportBgc.png') 100% 100% no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 30px;
+        box-sizing: border-box;
+        margin-bottom: 50px;
+        .header-title {
+            margin-bottom: 18px;
+            span {
+                font-size: 22px;
+                font-weight: 700;
+                color: #333333;
+            }
+        }
+        .header-desc {
+            max-width: 940px;
+            span {
+                font-size: 16px;
+                color: #333333;
+                margin-right: 20px;
+                line-height: 30px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .problem-report-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+
+        .report-grades {
+            width: 280px;
+            height: 40px;
+            background: url('../images/reportBgc2.png') 100% 100% no-repeat;
+            background-size: cover;
+            padding: 7px 24px;
+            box-sizing: border-box;
+            margin-bottom: 41px;
+            span {
+                font-size: 20px;
+                font-weight: 700;
+                color: #333333;
+            }
+        }
+        .report-grades-content {
+            display: flex;
+            align-items: center;
+            margin-left: 21px;
+        }
+        .grades-accuracy {
+            margin-right: 48px;
+            position: relative;
+            .grades-accuracy_text {
+                position: absolute;
+                font-size: 12px;
+                color: #f8323c;
+                left: 50%;
+                top: 50%;
+                transform: translate(-42%, -60%);
+            }
+            .grades-accuracy_percentage {
+                font-size: 24px;
+                color: #f8323c;
+                font-weight: 700;
+                display: flex;
+                align-items: flex-end;
+                span {
+                    font-size: 12px;
+                    font-weight: 600;
+                    transform: translateY(-4px);
+                }
+            }
+        }
+        .report-grades-data {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-right: 40px;
+            height: 50px;
+            &:last-child {
+                margin-right: 0;
+            }
+            .grades-data-title {
+                font-size: 12px;
+                color: #797ea6;
+            }
+        }
+        .grades-data-num {
+            font-size: 20px;
+            color: #0a2e6d;
+            font-weight: 600;
+            span {
+                display: inline-block;
+                font-size: 12px;
+                transform: translateX(-1px);
+            }
+            em {
+                font-style: normal;
+            }
+        }
+        .report-grades-box {
+            padding-bottom: 50px;
+        }
+    }
+    .report-box-right {
+        margin-left: 60px;
+        .box-right-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            span {
+                font-size: 16px;
+                color: #333333;
+                font-weight: 700;
+            }
+            .box-right-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-bottom: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .report-info-box {
+            width: 180px;
+            height: 46px;
+            border-radius: 23px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .report-analysis {
+            background: linear-gradient(84deg, #ff737a 5%, #f8323c 93%);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+        .report-back {
+            border: 1px solid #e4e5ee;
+            color: #3a3d4b;
+        }
+    }
+    ::v-deep .report-table {
+        .el-table__row {
+            background-color: #fbfbfc;
+        }
+        .el-table__header {
+            background-color: #f3f4f9;
+            border-radius: 6px;
+        }
+    }
+
+    .report-grades-table {
+        padding-left: 24px;
+        .table-content {
+            width: 520px;
+            border: 1px solid #f5f5f5;
+        }
+        tr td {
+            text-align: center;
+            height: 52px;
+            &:first-child {
+                text-align: left;
+                padding-left: 43px;
+            }
+        }
+        .tbody-tr {
+            position: relative;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 20px;
+                right: 20px;
+                height: 1px;
+                background: #f5f5f5;
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        .thead-box {
+            width: 100%;
+            height: 52px;
+            background: #f3f4f9;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #333333;
+            th {
+                text-align: center;
+                font-weight: normal;
+                border: 0;
+                &:first-child {
+                    text-align: left;
+                    padding-left: 43px;
+                }
+            }
+        }
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}

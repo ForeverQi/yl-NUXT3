@@ -1,0 +1,433 @@
+.outContent{
+    width: 962px;
+}
+.right {
+    display: flex;
+}
+.evaluatTeacher {
+    cursor: pointer;
+    font-size: 12px;
+    color: #472200;
+    margin-right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 2px;
+    }
+}
+
+.record {
+    cursor: pointer;
+    padding: 5.5px 19px;
+    font-size: 14px;
+    color: #F8323C;
+    border-radius: 8px;
+    background: #FFF3F3;
+}
+.bottomTip {
+    margin-left: -58px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #f5f5f5;
+    border-radius: 30px;
+    z-index: 3;
+}
+.ucIndex {
+    position: relative;
+    .indexCont {
+        margin: 0 auto;
+        position: relative;
+    }
+}
+.navigationWrap {
+    float: left;
+}
+.contentWrap {
+    background-color: white;
+}
+.clearfix:after {
+    content: '';
+    height: 0;
+    display: block;
+    clear: both;
+}
+.detailsTitle {
+    padding: 19px 30px 28px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+.tabDetails {
+    min-height: 662px;
+}
+.payLi {
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+    background: #fff;
+    .liTit {
+        display: flex;
+        align-items: center;
+        line-height: 46px;
+        .headerName {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+        .serverIco {
+            font-size: 14px;
+            color: #666666;
+        }
+    }
+    .phoneAndWx {
+        display: flex;
+        align-items: center;
+        line-height: 40px;
+        font-size: 18px;
+        color: #333;
+        .phoneIcon {
+            height: 22px;
+            width: 22px;
+            background: url('../asset/images/bzr_fg1.png') no-repeat left top;
+            background-size: 100% 100%;
+            margin-right: 3px;
+            &.wxIcon {
+                margin-left: 40px;
+                background: url('../asset/images/bzr_fg2.png') no-repeat left top;
+                background-size: 100% 100%;
+            }
+        }
+    }
+    .discrib {
+        padding: 10px 0;
+        font-size: 14px;
+        color: #666666;
+        line-height: 22px;
+        .disHead {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+    }
+}
+.payContent {
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    .contentBg {
+        width: 902px;
+        height: 140px;
+        margin: 12px 30px 0;
+        background: url(../asset/images/bg.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    .teacherInfo {
+        display: flex;
+        padding: 24px 10px 20px;
+        .infoLeft {
+            outline: none;
+            cursor: pointer;
+            width: 24px;
+            margin-top: 152px;
+            .leftImg {
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url('../asset/images/leftImg@2x.png');
+                background-size: 100% 100%;
+            }
+        }
+        .swiper-button-next {
+            background: none !important;
+            position: initial !important;
+        }
+        .swiper-button-prev {
+            background: none !important;
+            position: initial !important;
+        }
+        .swiper-container {
+            width: 100%;
+            .headProject {
+                width: 100%;
+                /*display: flex;
+                justify-content: space-between;*/
+                display: inline-block;
+                margin-left: 16px;
+                margin-right: 16px;
+                .leftIntroduction {
+                    width: 182px;
+                    height: 21px;
+                    background: url('../asset/images/introductionImg@2x.png') no-repeat;
+                    background-size: 100% 100%;
+                    float: left;
+                    margin-top: 5px;
+                }
+                /*.introductionCh {
+                    font-size: 16px;
+                    color: #472200;
+                    line-height: 24px;
+                }
+                .introductionEn {
+                    font-size: 12px;
+                    color: #472200;
+                    opacity: 0.1;
+                    line-height: 18px;
+                }*/
+                .rightProject {
+                    width: 180px;
+                    height: 28px;
+                    background: url('../asset/images/projectImg@2x.png');
+                    background-size: 100% 100%;
+                    text-align: center;
+                    line-height: 28px;
+                    color: #472200;
+                    float: right;
+                    margin-right: 31px;
+                }
+            }
+            .infoContent {
+                .introductionName {
+                    width: calc(100% - 32px);
+                    border-radius: 6px;
+                    margin: 0 auto;
+                    margin-top: 16px;
+                    .introductPhoto {
+                        padding: 10px 20px 14px;
+                        box-shadow: 0px 2px 12px 2px rgba(11, 42, 113, 0.05);
+                        .introductionInfo {
+                            display: flex;
+                            justify-content: space-between;
+                            border-bottom: 1px dashed #F0EDEB;
+                            padding-bottom: 10px;
+                            .infoHeadLeft {
+                                display: flex;
+                                align-items: center;
+                                .photoImg {
+                                    width: 28px;
+                                    height: 28px;
+                                }
+                                .nickname {
+                                    font-size: 14px;
+                                    color: #472200;
+                                    margin-left: 9px;
+                                }
+                            }
+                            .infoRepair {
+                                font-size: 14px;
+                                color: #B1906A;
+                                margin-left: 14px;
+                            }
+                        }
+                        .introduction {
+                            margin-top: 10px;
+                            opacity: 0.8;
+                            font-size: 14px;
+                            color: #472200;
+                            line-height: 22px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .contactTeacher {
+                    width: 127px;
+                    height: 21px;
+                    background: url('../asset/images/contactTeacher@2x.png') no-repeat;
+                    background-size: 100% 100%;
+                    margin-top:  40px;
+                    margin-left: 16px;
+                    display: block;
+                    /*margin-top: 40px;
+                    font-size: 16px;
+                    text-align: left;
+                    color: #472200;
+                    margin-left: 16px;
+                    span {
+                        opacity: 0.1;
+                        font-size: 12px;
+                        color: #472200;
+                        line-height: 17px;
+                        margin-left: 4px;
+                    }*/
+                }
+                .contactInfo {
+                    width: calc(100% - 24px);
+                    background: white;
+                    border-radius: 6px;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    .contactWay {
+                        box-shadow: 0px 2px 12px 2px rgba(11, 42, 113, 0.05);
+                        padding: 18px 46px 16px;
+                        .contactPhone {
+                            display: flex;
+                            margin-top: 9px;
+                            .phoneImg {
+                                width: 20px;
+                                height: 20px;
+                                background: url('../asset/images/phoneImg@2x.png');
+                                background-size: 100% 100%;
+                            }
+                            .phoneName {
+                                font-size: 14px;
+                                color: #6c4e33;
+                                line-height: 30px;
+                            }
+                            .phoneNumber {
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: #472200;
+                                line-height: 30px;
+                                margin-left: 4px;
+                                /*width: 168px;*/
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                padding-right: 15px;
+                                background: #fff;
+                            }
+                            .phoneBtn {
+                                width: 84px;
+                                height: 30px;
+                                cursor: pointer;
+                                background: url('../asset/images/tel-bg.png') no-repeat;
+                                background-size: 100% 100%;
+                                text-align: center;
+                                line-height: 30px;
+                                font-size: 13px;
+                                color: #f8323c;
+                                padding-left: 22px;
+                                box-sizing: border-box;
+                            }
+                        }
+                        .contactWechat {
+                            display: flex;
+                            .weChatImg {
+                                width: 20px;
+                                height: 20px;
+                                background: url('../asset/images/weChatImg@2x.png');
+                                background-size: 100% 100%;
+                            }
+                            .weChatName {
+                                font-size: 14px;
+                                color: #6c4e33;
+                                line-height: 30px;
+                            }
+                            .weChatNumber {
+                                cursor: pointer;
+                                font-size: 14px;
+                                color: #472200;
+                                line-height: 30px;
+                                margin-left: 4px;
+                                /*width: 168px;*/
+                                padding-right: 15px;
+                                background: #fff;
+                                display: flex;
+                                .name{
+                                    font-weight: bold;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                }
+                                .youlu{
+                                    /*width: 142px;*/
+                                    font-size: 12px;
+                                    color: #ff9a3e;
+                                    margin-left: 8px;
+                                }
+                            }
+
+                            .weChatBtn {
+                                cursor: pointer;
+                                width: 84px;
+                                height: 30px;
+                                background: url('../asset/images/we-com-bg.png') no-repeat;
+                                background-size: 100% 100%;
+                                text-align: center;
+                                line-height: 30px;
+                                font-size: 13px;
+                                color: #0089FF;
+                                padding-left: 22px;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+                }
+            }
+            .no-student-manager {
+                margin: 67px auto 0;
+                img {
+                    width: 304px;
+                    height: 159px;
+                    margin: 0 auto;
+                    display: block;
+                }
+                .empty {
+                    font-size: 15px;
+                    font-weight: 400;
+                    text-align: center;
+                    color: #3a3d4b;
+                    line-height: 24px;
+                    margin-top: 12px;
+                    margin-bottom: 53px;
+                }
+                .customer-service {
+                    width: 246px;
+                    height: 48px;
+                    font-size: 14px;
+                    text-align: center;
+                    color: #8d90aa;
+                    line-height: 24px;
+                    margin: 313px auto 60px;
+                    span {
+                        font-weight: bold;
+                        color: #3a3d4b;
+                    }
+                }
+            }
+        }
+        .infoRight {
+            outline: none;
+            cursor: pointer;
+            width: 24px;
+            margin-top: 152px;
+            .rightImg {
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url('../asset/images/rightImg@2x.png');
+                background-size: 100% 100%;
+            }
+        }
+    }
+    .weChatEr {
+        position: absolute;
+        bottom: -15px;
+        left: 130px;
+        width: 86px;
+        height: 86px;
+        z-index: 9;
+        background: #fff;
+        img {
+            width: 86px;
+            height: 86px;
+        }
+    }
+    // .customerService {
+    //     padding-left: 50px;
+    //     font-size: 14px;
+    //     color: #b9aa9d;
+    //     line-height: 21px;
+    //     span {
+    //         color: #472200;
+    //     }
+    // }
+}

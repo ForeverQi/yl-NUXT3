@@ -1,0 +1,65 @@
+.information-single-page {
+    background: #f6f7f9;
+}
+.w-1200 {
+    width: 1200px;
+    margin: 0 auto;
+}
+// 头部
+.information-single-header {
+    background-color: #fff;
+    padding: 0 0 35px;
+    /deep/ .courseContent {
+        margin: 0 !important;
+        padding-left: 20px;
+    }
+    /deep/ .courseContent .body {
+        margin: 0 !important;
+    }
+    /deep/ .courseContent .topNav .anvContent span a {
+        max-width: 600px;
+    }
+}
+// 内容
+.information-single-content {
+    background: #f6f7f9;
+    padding: 32px 0 67px;
+    display: flex;
+    align-items: flex-start;
+
+    // 列表
+    .information-list {
+        position: relative;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        width: 852px;
+        min-height: 580px;
+        border-radius: 8px;
+        margin-right: 24px;
+        &.empty{
+            background-color: #fff;
+            margin-bottom: 100px;
+            .detail-up-down-box{
+                position: absolute;
+                top:590px;
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+// 右侧推荐
+.information-side {
+    &>div{
+        margin-bottom: 16px;
+    }
+    &>div:last-child{
+        margin-bottom: 0
+    }
+    .recommended-app{
+        width: 324px;
+        height: 180px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+}

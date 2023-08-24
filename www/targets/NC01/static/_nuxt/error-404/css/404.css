@@ -1,0 +1,142 @@
+.empty-html {
+    height: 100%;
+    font-family: MicrosoftYaHei;
+}
+
+.empty-body {
+    margin: 0;
+    height: 100%;
+}
+
+.empty-footer{
+    background-color: #ECEDF2;
+    padding-top: 32.5px;
+    padding-bottom: 32.5px;
+}
+
+.empty-img-link {
+    text-align: center;
+    margin-top: 31px;
+}
+
+.empty-img-link-icon {
+    width: 131px;
+    height: 54px;
+}
+
+.empty-img-link-icon + .empty-img-link-icon {
+    margin-left: 53px;
+}
+
+.empty-copyright {
+    font-size: 14px;
+    text-align: center;
+}
+.empty-copyright-ploice {
+    width: 14px;
+    height: 15px;
+}
+
+.empty-img-404 {
+    width: 591px;
+    height: 496px;
+    vertical-align: middle;
+}
+.empty-img-logo {
+    width: 556px;
+    height: 648px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-height: 100%;
+    background-image: url('../asset/images/logo_line.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.empty-content {
+    background-color: #F5F6F9;
+    position: relative;
+    height: calc(100% - 173px);
+    text-align: center;
+    min-width: 1310px;
+}
+
+.empty-info {
+    display: inline-block;
+    text-align: left;
+    color: #53586C;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.empty-wrapper {
+    height: 100%;
+    min-width: 1376px;
+    min-height: 798px;
+}
+
+.empty-tip {
+    font-size: 30px;
+    color: #3A3D4B;
+    font-weight: bold;
+}
+
+.empty-err-desc {
+    color: #9698A2;
+}
+
+.empty-redirect-time {
+    color: #F8323C;
+    font-weight: bold;
+}
+
+.empty-home {
+    font-size: 16px;
+    /* background: linear-gradient(301deg, #FF737A, #F8323C); */
+    background: url('../asset/images/btn-bg.png');
+    background-size: cover;
+    color: white;
+    border: none;
+    padding: 9.5px 28px;
+    /* border-radius: 20px; */
+    /* filter: progid:DXImageTransform.Microsoft.gradient(GradientType=301,startColorstr='#FF737A', endColorstr='#F8323C'); */
+}
+
+.empty-home:hover {
+    background: #F8323C;
+    border-radius: 20px
+}
+
+.empty-img-log-text {
+    position: absolute;
+    top: 0;
+    width: 137px;
+    height: 28px;
+    padding: 20px;
+    padding-left: 0;
+}
+
+.empty-img-log-text img {
+    width: 100%;
+    height: 100%;
+}
+
+.empty-center-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.empty-wrapper p {
+    margin: 0;
+    padding: 0;
+}
+
+.empty-reason {
+    margin-top: 15px !important;
+}
+
+.empty-redirect {
+    margin-top: 10px  !important;
+    margin-bottom: 10px  !important;
+}

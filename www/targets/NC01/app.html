@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+    <head {{ HEAD_ATTRS }}>
+        {{ HEAD }}
+        <link rel="stylesheet" href="/_nuxt/error-browser-compatibility/css/ie.css" />
+        <style>
+            #watermark {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                background-repeat: repeat;
+                background-position: 0 0;
+                left: 0;
+                top: 0;
+                z-index: 9999999;
+            }
+            /* 黑白主题 */
+            /*html.gray{
+                -webkit-filter: grayscale(100%);
+                -moz-filter: grayscale(100%);
+                -ms-filter: grayscale(100%);
+                -o-filter: grayscale(100%);
+                filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+                _filter: none;
+            }*/
+        </style>
+    </head>
+    <body {{ BODY_ATTRS }} style="visibility: hidden">
+        <script type="text/javascript">
+            window.GlobalConfig = window.GlobalConfig || {
+                ENV: '<%=env%>', //dev1：开发环境  test：测试环境 uat：uat环境 prod:生产环境
+                ctype: 'YOULU.WEB', //YOULU.H5
+            };
+            // 黑白主题
+            // if(location.pathname === "/") {
+            //     document.documentElement.classList.add("gray");
+            // }
+        </script>
+        <!-- 阿里云ARMS前段监控 -->
+        <script type="text/javascript">
+            var userString = localStorage.getItem('loginStatus') || '{}';
+            var user = JSON.parse(userString);
+            var notLogined = !!user.userYoulunum;
+            (function () {
+                // 本地运行模式、验学模式不再上报
+                if (location.host.indexOf(':') !== -1 || location.host.indexOf('preview.jiaoyu361.com') !== -1) {
+                    /* 保留 __bl 对象，提供虚假实现，防止代码报错 */
+                    window.__bl = {
+                        config: {},
+                    };
+                    [
+                        'api',
+                        'error',
+                        'sum',
+                        'avg',
+                        'reportBehavior',
+                        'addBehavior',
+                        'getBehavior',
+                        'performance',
+                        'setConfig',
+                        'getConfig',
+                        'setPage',
+                        'setCommonInfo',
+                        'removeHook',
+                    ].forEach(function (key) {
+                        window.__bl[key] = function () {
+                            console.error('Fake api implementation!');
+                        };
+                    });
+
+                    return;
+                }
+
+                window.__bl = {
+                    config: {
+                        /* 应用类型 */
+                        appType: 'web',
+
+                        /* 应用ID */
+                        pid: 'hvzsl@e070be63d56cebc', //优路-PC官网
+
+                        /**
+                         * 生产环境 - prod
+                         * 开发/测试/仿真环境 - daily
+                         * 参阅：https://help.aliyun.com/document_detail/58655.html#sc-environment
+                         */
+                        environment: window.GlobalConfig.ENV !== 'prod' ? 'daily' : 'prod',
+
+                        /* SDK 默认为：浏览器 - true；小程序 - false */
+                        behavior: true,
+
+                        /* SDK 默认为：false */
+                        disableHook: true,
+
+                        /**
+                         * 用户ID，参阅：https://help.aliyun.com/document_detail/58655.html#sc-uid
+                         * 1) 对于管理端，如智能运营平台，设置为 员工工号；
+                         * 2) 对于用户端，如优路 PC 官网，设置为 学员优路号；
+                         * 3) 如果尚未登录，则赋值为 null。需要在登录后，再次调用 setConfig 方法，更新 uid
+                         */
+                        uid: !notLogined ? null : user.userYoulunum,
+
+                        // eslint-disable-next-line jsdoc/require-returns
+                        /**
+                         * 用户姓名，参阅：https://help.aliyun.com/document_detail/58655.html#sc-setusername
+                         */
+                        // eslint-disable-next-line object-shorthand, prettier/prettier
+                        setUsername: function () {
+                            // 如果没有登录，需返回 null
+                            if (!notLogined) return null;
+
+                            return user ? user.userNickname || user.userYoulunum || user.userLoginname : '';
+                        },
+
+                        /**
+                         * 要忽略的错误列表，防止没有价值的错误重复消耗流量成本。根据实际情况进行补充
+                         * 参阅：https://help.aliyun.com/document_detail/58655.html?#sc-ignore
+                         */
+                        ignore: {
+                            ignoreUrls: [],
+                            ignoreApis: [],
+                            ignoreErrors: [
+                                /* 参阅：https://blog.csdn.net/gudeng007/article/details/125765927 */
+                                'ResizeObserver loop limit exceeded',
+                                /* 去除Script error.报错信息 */
+                                'Network Error',
+                                /* 去除Navigation cancelled from.报错信息 */
+                                /^Navigation cancelled from/,
+                                /* 去除Script error.报错信息 */
+                                /^Script error\.?$/,
+                            ],
+                            ignoreResErrors: [
+                                function (str) {
+                                    // 关于易聊相关的资源加载不上报
+                                    if (str && (str.indexOf('https://webcall-oss.easyliao.com') !== -1 || str.indexOf('https://group-live2.easyliao.com') !== -1)) return true; // 不上报
+                                    return false; // 上报
+                                },
+                                /* 忽略非资源型错误（如：页面访问失败） */
+                                function (resUrl) {
+                                    var isAsset = /\.(?:js|json|css|ttf|otf|png|ico|icon|jpg|jpeg|svg|gif|webp|bmp|mp3|mp4|wav|ogg|amr|m4a|flac|aac|pdf|xls|xlsx|doc|docx|wps|pdf|ppt|pptx|zip|rar|7z|map|xml|yml|txt|inf|ini|log|md|manifest)(?:\?.*)?$/i.test(resUrl);
+                                    return !isAsset;
+                                }
+                            ],
+                        },
+                        /**
+                         * 采样率，固定为 2，代表 50%。分值越小，百分比，成本越高
+                         * 参阅：https://help.aliyun.com/document_detail/58655.html?#sc-sample
+                         */
+                        sample: 2,
+
+                        /**
+                         * 页面PV采样率，固定为 2，代表 50%。分值越小，百分比，成本越高
+                         * 参阅：https://help.aliyun.com/document_detail/58655.html?#section-d6m-p69-jiw
+                         */
+                        pvSample: 2,
+
+                        /* SDK 默认为：true */
+                        autoSendPerf: false,
+
+                        /* SDK 默认为：false */
+                        enableSPA: false,
+
+                        /* SDK 默认为：false */
+                        useFmp: false,
+
+                        /* SDK 默认为：false */
+                        sendResource: false,
+
+                        /* SDK 默认为：false */
+                        enableLinkTrace: false,
+
+                        /* SDK 默认为： */
+                        enableConsole: false,
+
+                        /* 数据上报的目标位置（阿里 ARMS 产品提供，不要修改） */
+                        imgUrl: 'https://arms-retcode.aliyuncs.com/r.png?',
+                    },
+                };
+                document.write('<script type="text/javascript" src="https://retcode.alicdn.com/retcode/bl.js" crossorigin><\/script>');
+            })();
+        </script>
+        <script src="https://www.niceloo.com/zt4ird/qi-ta/agreement-plugin/main.common.js"></script>
+        <script>
+          (function () {
+            // 第一次加载登录注册js
+            var grayscale;
+            // 第一次加载登录注册js
+            var url;
+            try {
+                grayscale = localStorage.getItem('grayscale') || '';
+                url = window.GlobalConfig.ENV !== 'prod'
+                    ? 'https://www.youlu.com/zt4ird/qi-ta/login-plugin2/uat/main.common.js'
+                    : 'https://www.youlu.com/zt4ird/qi-ta/login-plugin2/main.common.js';
+                if (grayscale) {
+                    url = 'https://www.youlu.com/zt4ird/qi-ta/login-plugin2/grayscale/main.common.js';
+                }
+            } catch (error) {
+                url = 'https://www.youlu.com/zt4ird/qi-ta/login-plugin2/main.common.js';
+            }
+            url = url + '?' + Math.random();
+              // var script = document.createElement('script');
+              // script.defer = true;
+              // script.src = url;
+
+              document.write('<script type="text/javascript" src="' + url + '" crossorigin="anonymous"><\/script>');
+          })();
+      </script>
+        <div id="ie" style="display: none"></div>
+        <div id="main_nuxt">{{ APP }}</div>
+
+        <script type="text/javascript" src="/_nuxt/error-browser-compatibility/js/ie.js"></script>
+
+        <script>
+            /**
+             * 生成水印
+             * @param text 水印显示的文本
+             */
+            var setIntervalNum = 0;
+            var generateWatermark = function (text) {
+                var para = document.createElement('div');
+                para.id = 'watermark';
+                document.body.appendChild(para);
+
+                var canvasObj = document.createElement('canvas');
+                canvasObj.width = 250;
+                canvasObj.height = 200;
+                var ctx = canvasObj.getContext('2d');
+                ctx.translate(30, 80);
+                ctx.rotate((Math.PI / 180) * -18);
+                ctx.fillStyle = 'rgba(200, 200, 200, 0.2)';
+                ctx.font = '16px 微软雅黑';
+                ctx.fillText(text, 0, 0);
+                return canvasObj.toDataURL('image/png');
+            };
+
+            /**
+             * 根据给定的员工生成并显示水印
+             * @param {String} watermarkText.eeUserName 员工姓名
+             * @param {String} watermarkText.eeNo 员工编号
+             */
+            var generateShowWatermarkByUser = function () {
+                /* 生成水印 */
+                var watermarkText = JSON.parse(localStorage.getItem('watermarkInfo'));
+                if (watermarkText && watermarkText.eeNo && watermarkText.eeUserName) {
+                  var str = watermarkText.eeNo + watermarkText.eeUserName;
+                  var watermarkBase64 = generateWatermark(str);
+                  var dom = document.getElementById('watermark');
+                  dom.style.backgroundImage = "url('" + watermarkBase64 + "')";
+                }                
+            };
+            setInterval(function () {
+                var dom = document.getElementById('watermark');
+                if (dom == null && window.location.host.indexOf('jiaoyu361.com') > -1) {
+                    generateShowWatermarkByUser();
+                }
+                if (dom != null && window.location.host.indexOf('jiaoyu361.com') < 0) {
+                    clearInterval(setIntervalNum);
+                    document.getElementById('watermark').remove();
+                }
+            }, 200);
+        </script>
+
+        <script type="text/javascript" src="/_nuxt/zbbjs/AnalysysAgent_JS_SDK.min.js"></script>
+        <script type="text/javascript" src="/_nuxt/zbbjs/utemp.js"></script>
+        <script type="text/javascript" src="/_nuxt/zbbjs/ygsdk.js"></script>
+
+    </body>
+</html>

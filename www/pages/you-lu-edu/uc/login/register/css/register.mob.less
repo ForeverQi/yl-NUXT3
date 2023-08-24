@@ -1,0 +1,161 @@
+/* 手机环境下的表现样式 */
+[data-env=not-pc]{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  .header-on-mobile{
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    background-color: #ec1313;
+
+    .nav-back{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      display: block;
+      width: 40px;
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUBAMAAABL3sEiAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAtUExURUdwTP///////////////////////////////////////////////////////81e3QIAAAAOdFJOUwDPiwm6Geb2U0CiJWxxxIYk/gAAAE5JREFUCNdjYAACZjcQyRD4CkRy5ymAqOlvQCTHuwYQda4SRDI9CwBR60RBpMkTAxAlB1YMo6CCUCVADRsYENphhjFMf8uAZBHUWgZmRwBwdRQZ7W2CEQAAAABJRU5ErkJggg==");
+    }
+  }
+
+  .nl_header, .nl_logo, .cpy{
+    display: none;
+  }
+  .nl_mianCon{
+    width: auto;
+    margin: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .nl_lnform{
+    width: auto;
+    padding: 0;
+    float: none;
+  }
+  /deep/ .nlf_tit{
+    display: none;
+  }
+  /deep/ .nlf_errtip{
+    position: relative;
+    height: auto;
+    min-height: 20px;
+    padding: 0 10px;
+
+    &:not(:empty):before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background-color: #ec1313;
+    }
+  }
+  /deep/ .nlf_con{
+    position: relative;
+    padding: 0 20px;
+
+    input:not([type=checkbox]){
+      width: 100%;
+      border: none;
+      padding-left: 0;
+      line-height: normal;
+      font-size: inherit;
+      box-sizing: border-box;
+    }
+
+    i{
+      display: none;
+    }
+
+    .nlf_lab{
+      height: 48px;
+      line-height: 48px;
+      padding-left: 70px;
+      border: solid 1px #EFEFEF;
+      border-radius: 5px;
+      box-shadow: 5px 5px 10px #e6e6e6;
+    }
+
+    .nlf_lab.dxyzm{
+      padding-left: 0;
+    }
+    .nlf_lab.dxyzm::after{
+      display: block;
+      content: "";
+      clear: both;
+    }
+    .nlf_lab .nlf_yzminp{
+      float: left;
+      width: 60%;
+      padding-left: 16px;
+      box-sizing: border-box;
+    }
+
+    .nlf_lab .yzm_btn{
+      float: left;
+      position: static;
+      width: 40%;
+      color: white;
+      background-color: #ec1313;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .nlf_lab:nth-child(2):before{
+      display: inline-block;
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      line-height: 1em;
+      margin-top: -0.5em;
+    }
+    .nlf_lab:nth-child(2):before{
+      content: "账号";
+    }
+    .nlf_lab:nth-child(3):before{
+      content: "密码";
+    }
+  }
+  /deep/ .eye{
+    display: none;
+  }
+  /deep/ .nlf_rt{
+    display: none;
+  }
+  /deep/ .nlf_tip{
+    margin: 10px 0 40px 0;
+  }
+  /deep/ .nlf_btnbox{
+    padding: 0;
+    margin-top: 20px;
+  }
+  /deep/ .nlf_sp{
+    display: block;
+    margin-top: 10px;
+  }
+  /deep/ .nlf_btn{
+    width: 100%;
+    font-size: 1.2em;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+  /deep/ .login-agree{
+    display: none;
+  }
+}

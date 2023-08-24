@@ -1,0 +1,156 @@
+#ie {
+    min-width: 1200px;
+    margin: 88px auto 45px;
+    text-align: center;
+}
+
+#ie .m-container {
+    padding: 0 91px;
+    width: 1200px;
+    height: 343px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+}
+
+#ie .logo {
+    width: 123px;
+    height: 36px;
+    position: absolute;
+    top: -45px;
+    right: 91px;
+}
+
+#ie .content-left {
+    width: 565px;
+    height: 343px;
+    margin-right: 41px;
+    float: left;
+}
+
+#ie .content-right {
+    float: left;
+    width: 412px;
+}
+
+#ie .tips-wrap {
+    margin-top: 102px;
+}
+
+#ie .tips-wrap div {
+    line-height: 26px;
+    font-size: 20px;
+    font-family: MicrosoftYaHei;
+    margin-bottom: 24px;
+}
+
+#ie .tips-wrap span {
+    line-height: 21px;
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+}
+
+#ie .mb12 {
+    margin-bottom: 12px;
+}
+
+#ie .btn-wrap {
+    margin-top: 48px;
+}
+
+#ie .btn-wrap div {
+    width: 181px;
+    height: 52px;
+    border-radius: 26px;
+    text-align: center;
+    line-height: 52px;
+    box-sizing: border-box;
+    float: left;
+    cursor: pointer;
+}
+
+#ie .btn-1 {
+    background: #ff5c5c;
+    color: #ffffff;
+    margin-right: 40px;
+}
+
+#ie .btn-1 a {
+    color: #ffffff;
+}
+
+#ie .mgr40 {
+    margin-right: 40px;
+}
+
+#ie .mgb20 {
+    margin-bottom: 20px;
+}
+
+#ie .btn-2 {
+    border: 1px solid #ff4b3a;
+    color: #ff5c5c;
+}
+
+#ie .btn-2 a {
+    color: #ff5c5c;
+}
+
+#ie .intro-wrap {
+    width: 1200px;
+    height: 282px;
+    margin: 123px auto 0;
+    padding: 0 71px;
+    box-sizing: border-box;
+}
+
+#ie .intro-wrap li {
+    list-style: none;
+    width: 238px;
+    height: 282px;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 15px;
+    margin-right: 26px;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#ie .intro-wrap li:last-child {
+    margin-right: 0;
+}
+
+#ie .intro-img {
+    width: 151px;
+    height: 151px;
+    opacity: 0.9;
+    margin: 10px 48px 17px 39px;
+}
+
+#ie .intro {
+    width: 175px;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    text-align: left;
+    color: #848484;
+    line-height: 19px;
+    letter-spacing: 0;
+    margin: 0 auto;
+}
+
+#ie .intro-index {
+    float: right;
+    width: 23px;
+    height: 24px;
+    font-size: 18px;
+    font-family: MicrosoftYaHei;
+    font-weight: 700;
+    text-align: left;
+    color: #bebebe;
+    line-height: 24px;
+    position: absolute;
+    right: 27px;
+    bottom: 8px;
+}

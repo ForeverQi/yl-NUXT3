@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>优路教育</title>
+</head>
+<style>
+    html,body{
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .loading{
+        position: relative;
+        top: 50%;
+        line-height: 1.4em;
+        margin-top: -0.7em;
+        text-align: center;
+        color: #999999;
+    }
+</style>
+<body>
+<div class="loading">加载中...</div>
+
+<script src = "./Fingerprintjs.min.js"></script>
+<script>
+    ;(function(){
+        /**
+         * 设置 cookie
+         */
+        var setCookie = function (key, value, expiresMilliseconds) {
+            var expires = '';
+            if (expiresMilliseconds) {
+                expires = 'expires=' + new Date(new Date().getTime() + expiresMilliseconds).toUTCString();
+            }
+            document.cookie = key + "=" + encodeURIComponent(value) + ";path=/;domain=" + location.hostname.substr(location.hostname.indexOf('.') + 1) + ";" + expires;
+        };
+
+        /**
+         * 对象序列化
+         * @param {Object} data 要序列化的对象
+         * @returns {String}
+         */
+        var serialize = function(data){
+            var s = "";
+            for(var p in data)
+                s += "&" + p + "=" + encodeURIComponent(data[p]).replace(/\+/gm, "%2B");
+            s = s.length > 0? s.substring(1): s;
+
+            return s;
+        };
+
+        /**
+         * 根据给定的查询字符串解析为JsonObject
+         * @param str {String}
+         * @returns {Object}
+         */
+        var parseQueryString = function(str){
+            var map = {};
+
+            if(null == str || typeof str != "string" || "" == str || "?" == str)
+                return map;
+
+            str = str.replace(/^\s*[?!]*/, "");
+            str.split(/&/).forEach(function(pair){
+                pair = pair.trim();
+                if("" == pair)
+                    return;
+
+                var sepIndex = pair.indexOf("=");
+                if(-1 == sepIndex){
+                    map[pair] = "";
+                }else{
+                    var name = pair.substring(0, sepIndex),
+                        val = decodeURIComponent(pair.substring(sepIndex + 1));
+
+                    map[name] = val;
+                }
+            });
+
+            return map;
+        };
+
+        /**
+         * 呈现错误给用户
+         * @param msg
+         */
+        var showError = function(msg) {
+            document.querySelector('.loading').innerHTML = msg;
+        };
+
+
+        var locationParams = parseQueryString(location.search);
+        var specifiedEnv = locationParams.webpackPresetRuntimeEnv,
+            inferredEnvFromDomain = window.location.hostname.split('.')[0].split('preview')[1],
+            envSuffix = specifiedEnv || inferredEnvFromDomain || "",
+            umsuDomain = "umsu" + envSuffix + ".niceloo.com";
+
+        if(!!specifiedEnv){
+            localStorage.setItem('webpackPresetRuntimeEnv', specifiedEnv);
+            setCookie('tool_dataOriginEnv', specifiedEnv, 30 * 24 * 60 * 60, '/');
+        }
+
+        debugger;
+        localStorage.removeItem('loginStatus');
+        localStorage.removeItem('loginStatuscom.niceloo3.0.h5');
+
+        /* 参阅：https://www.npmjs.com/package/@fingerprintjs/fingerprintjs/v/2.1.5 了解为何延迟 */
+        var delay = window.requestIdleCallback || function(callback){
+            setTimeout(callback, 500);
+        };
+
+        delay(function(){
+            Fingerprint2.get({
+                excludes: {
+                    /* 经验证，不同域名上的 plugin 内容不完全相同 */
+                    plugins:true,
+                    enumerateDevices:true,
+                    deviceMemory:true,
+                    cpuClass:true,
+                    doNotTrack:true,
+                    pixelRatio:true,
+                    fontsFlash:true,
+                    adBlock:true
+                }
+            }, function (components) {
+                var values = components.map(function (component) { return component.value });
+                var fingerprint = Fingerprint2.x64hash128(values.join(''), 31);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "//" + umsuDomain + "/api/special/simulation/login");
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function(){
+                    if(this.readyState !== 4)
+                        return;
+
+                    if(!this.status || this.status < 200 || this.status >= 400){
+                        showError("响应码：" + this.status + "，正文：" + this.responseText);
+                        return;
+                    }
+
+                    var resp;
+                    try{
+                        resp = JSON.parse(this.responseText);
+                    }catch(e){
+                        showError(this.responseText);
+                        return;
+                    }
+
+                    if(resp.result !== "000000"){
+                        showError(resp.msg);
+                        return;
+                    }
+
+                    localStorage.removeItem('loginStatus');
+                    setCookie("TOKEN" + (envSuffix? ("_" + envSuffix): ""), resp.data.token);
+                    localStorage.setItem('watermarkInfo', JSON.stringify(resp.data.simulationUser));
+
+                    debugger;
+                    window.location.href = "/learningCenter/index/myCourse";
+                };
+
+                xhr.send(serialize({
+                    params: JSON.stringify({
+                        simulationToken: locationParams.simulationToken,
+                        specialEquipment: fingerprint
+                    }),
+                    ctype: "YOULU.WEB"
+                }));
+            })
+        });
+    })();
+</script>
+</body>
+</html>

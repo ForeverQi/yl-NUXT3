@@ -1,0 +1,213 @@
+.course-catalogue {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  .course-name {
+      font-size: 15px;
+      text-align: left;
+      color: #ffffff;
+      line-height: 30px;
+      padding: 12px 24px;
+      background-color: #202631;
+  }
+
+  .scroll {
+      height: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+
+      .tree {
+          .name {
+              display: flex;
+              justify-content: space-between;
+              font-size: 14px;
+              text-align: left;
+              color: #ffffff;
+              line-height: 21px;
+              padding: 14px 36px 16px 8px;
+              margin: 0 12px 0 16px;
+              word-break: break-all;
+              border-bottom: 1px solid #39414B;
+              cursor: default;
+
+              .label {
+                  font-size: 14px;
+                  color: #dddddd;
+                  line-height: 19px;
+                  letter-spacing: 0.29px;
+                  padding-right: 18px;
+                  background-image: url(./images/d.png);
+                  background-repeat: no-repeat;
+                  background-size: 16px 16px;
+                  background-position: right 2px;
+                  margin-right: -35px;
+                  flex-shrink: 0;
+
+                  &.up {
+                    background-image: url(./images/u.png);
+                  }
+              }
+          }
+
+          .item {
+              display: flex;
+              padding-right: 14px;
+              padding-left: 22px;
+              padding-top: 14px;
+              padding-bottom: 14px;
+              position: relative;
+              cursor: default;
+
+              &:hover {
+                background-color: #202631;
+              }
+
+              &.this {
+                  background-color: #202631;
+                  .type {
+                      .img {
+                          background-color: #202631;
+                      }
+                  }
+                  .content {
+                    .item-name {
+                        color: #ff2e30;
+                    }
+
+                    .info {
+                        .time {
+                            color: #ff2e30;
+                        }
+                    }
+                }
+              }
+
+              &::before {
+                  content: '';
+                  display: block;
+                  width: 1px;
+                  top: 20px;
+                  bottom: -20px;
+                  left: 28px;
+                  position: absolute;
+                  z-index: 1;
+                  border-right: 1px dashed #979797;
+              }
+
+              &:last-child {
+                  &::before {
+                      display: none;
+                  }
+              }
+              &.show {
+                  &:last-child {
+                      &::before {
+                          display: block;
+                      }
+                  }
+              }
+              .type {
+                  width: 16px;
+                  height: 16px;
+                  flex-shrink: 0;
+                  position: relative;
+                  z-index: 2;
+
+                  .img {
+                      width: 100%;
+                      height: 100%;
+                  }
+              }
+              .content {
+                  width: 100%;
+                  padding-left: 6px;
+
+                  .icon {
+                    position: absolute;
+                    left: 42px;
+                    top: 12px;
+                    width: 20px;
+                    text-indent: 0;
+                    height: 14px;
+                    margin-top: 2px;
+                    margin-right: 4px;
+                    flex-shrink: 0;
+                    display: inline-block;
+
+                    .img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                  }
+                  .mask {
+                    position: absolute;
+                    left: 66px;
+                    top: 16px;
+                    width: 30px;
+                    height: 14px;
+                    text-indent: 0;
+                    // background-color: #37bf72;
+                    background-image: url(./images/xuanxiu.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    border-radius: 2px;
+                    color: #fff;
+                    font-size: 12px;
+                    text-align: center;
+                    flex-shrink: 0;
+                    display: inline-block;
+                  }
+                  .item-name {
+                      align-items: flex-start;
+                      display: flex;
+                      font-size: 13px;
+                      text-align: left;
+                      color: #dddddd;
+                      line-height: 19px;
+                      word-break: break-all;
+                      padding-left: 24px;
+                      &.mask-indent {
+                        text-indent: 2.5em;
+                      }
+                      
+
+                      
+                      
+
+                     
+                  }
+
+                  .info {
+                      display: flex;
+                      line-height: 14px;
+                      padding-top: 8px;
+                      align-items: center;
+                      padding-left: 26px;
+                      .star {
+                          display: flex;
+                          padding-left: 20px;
+                          .star-item {
+                              width: 14px;
+                              height: 12px;
+
+                              .img {
+                                  width: 100%;
+                                  height: 100%;
+                              }
+                          }
+                      }
+
+                      .time {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: #dddddd;
+                        line-height: 16px;
+                    }
+                      
+                  }
+              }
+          }
+      }
+  }
+}
